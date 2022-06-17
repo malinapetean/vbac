@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1653490737 source:d:\mycode\bac_2009_v1_s3_pb3\main.cpp
+	<iostream>
+	<fstream>
+
