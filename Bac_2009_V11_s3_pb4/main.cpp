@@ -21,5 +21,6 @@ int main()
             ct++;
     }
     cout<<ct;
+
     return 0;
 }
