@@ -13,8 +13,8 @@ int prim(int n)
 int i_prim(int n)
 {
     int p1,p2,ok=0;
-    p1=n;
-    p2=n;
+    p1=n-1;
+    p2=n+1;
     while(!(prim(p1)))
         p1--;
 
