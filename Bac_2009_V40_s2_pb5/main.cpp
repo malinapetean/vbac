@@ -13,7 +13,7 @@ int main()
     while(p!=NULL)
     {
         strcpy(m[ct++],p);
-        p=strtok(NULL," ");
+        p=strtok(NULL,"*");
 
     }
     for(int i=0;i<ct;i++)
