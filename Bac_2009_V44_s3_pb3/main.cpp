@@ -2,23 +2,34 @@
 #include <cmath>
 
 using namespace std;
+
+bool prim(int nr)
+{
+    if(nr==0 || nr==1)
+        return false;
+    else{
+        for(int i=2;i<=nr/2;i++)
+        {
+            if(nr%i==0)
+                return false;
+        }
+    }
+    return true;
+}
+//operator ternar  val?EX1:EX2 daca val este adevarata atunci =>ex1 daca nu =>ex2  if(val)=>ex1 else ex2
+//8 32   5=16
 void P(int a,int b)
 {
-    int ok=1;
-    for(int i=a;i<=b;i++)
+    int minim=a<b?a:b;
+    int maxim=a<b?b:a;
+
+    for(int i=2;i<=sqrt(maxim);i++)
     {
-        double aux=sqrt(i);
-        cout<<aux<<" ";
-        if(aux==0 || aux==1)
-            ok=0;
-        else
-            for(int j=2;j<=aux;j++)
-                if(aux%j==0)
-                    ok=0;
-        if(ok==1)
-            cout<<i<<" ";
-        else
-            ok=1;
+
+        if(prim(i)==true && pow(i,2)<maxim && pow(i,2)>minim){
+             cout<<pow(i,2)<<endl;
+        }
+
     }
 
 }
@@ -26,7 +37,7 @@ int main()
 {
     int a, b;
     cin>>a>>b;
-    cout<<sqrt(a)<<endl;
     P(a,b);
+
     return 0;
 }

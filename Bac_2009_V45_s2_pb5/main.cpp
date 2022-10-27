@@ -11,7 +11,8 @@ int main()
     strcpy(aux,s);
     for(int i=0;i<strlen(s);i++)
     {
-        //strcpy(s+i,s+i+1);
+
+        strcpy(aux,s);
         strcpy(aux+i,s+i+1);
         cout<<aux<<endl;
     }
