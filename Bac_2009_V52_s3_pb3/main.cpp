@@ -4,28 +4,35 @@
 using namespace std;
 bool mult(int n,int a[1000])
 {
+    int f[1000]{};
     for(int i=0;i<n;i++)
     {
-        for(int j=0;j<n;j++)
-        {
-            if(a[i]==a[j] && i!=j)
-                return false;
+        f[a[i]]++;
+    }
+    for(int i=0;i<1000;i++)
+    {
+        if(f[i]>1){
+            return false;
         }
     }
     return true;
 }
+ifstream fin("date.in");
 int main()
 {
-    ifstream fin("date.in");
-    int a[1000],n,nrmax=0;
-    while(fin>>n)
+    int v[400],a,nrMaxim = 0,ok=1;
+	while(fin>>a)
     {
-        a[nrmax++] = n;
-		if (mult(nrmax,a) == 0) {
-			nrmax--;
+		v[nrMaxim++] = a;
+		if(mult(nrMaxim,v) == false)
+        {
+            nrMaxim--;
 			break;
 		}
-    }
-    cout<<nrmax;
+	}
+
+	cout<<nrMaxim<<" ";
+
+
     return 0;
 }
